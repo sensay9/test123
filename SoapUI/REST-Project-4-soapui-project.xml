@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="63448c2c-8afc-4236-b119-527afb23563f" activeEnvironment="Default" name="REST Project 4" resourceRoot="" soapui-version="5.5.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:RestService" id="225ec385-cd12-4339-b165-9fb2560e1876" wadlVersion="http://wadl.dev.java.net/2009/02" name="https://maps.googleapis.com" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>https://maps.googleapis.com</con:endpoint></con:endpoints><con:resource name="Json" path="/maps/api/place/textsearch/json" id="1a07dec2-82f8-4d7f-ae34-ee2b6fdc3cfe"><con:settings/><con:parameters><con:parameter><con:name>query</con:name><con:value>123 main street</con:value><con:style>QUERY</con:style><con:default>123 main street</con:default><con:path xsi:nil="true"/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>key</con:name><con:value>YOUR_API_KEY</con:value><con:style>QUERY</con:style><con:default>YOUR_API_KEY</con:default><con:path xsi:nil="true"/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Json 1" id="085b68b8-8deb-49da-9b1f-7dd2b2db44d4" method="GET"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>application/json; charset=UTF-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:json="https://maps.googleapis.com/maps/api/place/textsearch/json">json:Response</con:element></con:representation><con:request name="Request 1" id="b5efd9d0-0f30-4ff6-994b-3e184afaead6" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://maps.googleapis.com</con:endpoint><con:request/><con:originalUri>https://maps.googleapis.com/maps/api/place/textsearch/json</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="query" value="123 main street"/>
+  <con:entry key="key" value="AIzaSyCVJvsDOzhXv7k5ilMwz09JN1rEVys0Kog"/>
+</con:parameters><con:parameterOrder><con:entry>query</con:entry><con:entry>key</con:entry></con:parameterOrder></con:request></con:method></con:resource></con:interface><con:testSuite id="80b83299-fb42-40dd-8d22-305accb6e0b6" name="TextSearch"><con:description>TestSuite generated for REST Service [https://maps.googleapis.com]</con:description><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="81adf654-74ec-4f2b-9130-58a32da5b464" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Json TestCase" searchProperties="true"><con:description>TestCase generated for REST Resource [Json] located at [/maps/api/place/textsearch/json]</con:description><con:settings/><con:testStep type="restrequest" name="Request 1" id="1db837ca-6576-4388-a0fe-e06d317cf896"><con:settings/><con:config service="https://maps.googleapis.com" resourcePath="/maps/api/place/textsearch/json" methodName="Json 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Request 1" id="b5efd9d0-0f30-4ff6-994b-3e184afaead6" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://maps.googleapis.com</con:endpoint><con:request/><con:originalUri>https://maps.googleapis.com/maps/api/place/textsearch/json</con:originalUri><con:assertion type="GroovyScriptAssertion" id="eee5e08d-2dbf-431f-aecf-3e329df45672" name="ScriptAssertion"><con:configuration><scriptText>//Verify Place Id in the 5th Array Object
+//2 Ways of scripting in SoapUI
+//Groovy Teststep:  xml responses
+//Scrpting Assertions: Json and xml
+//XML xmlholder
+//Json JsonSlurper
+
+//Grabbing the Response
+import groovy.json.JsonSlurper
+def response = messageExchange.response.responseContent
+	def jsonsl = new JsonSlurper().parseText(response)
+
+	log.info jsonsl.results[4].id
+	def expected1 = context.getTestCase().getPropertyValue("placeid")
+   log.info expected1
+	assert expected1 == jsonsl.results[4].id
+	
+  //  log.info jsonsl.results[5].geometry.location.lat.getClass()
+   	def expected = context.getTestCase().getPropertyValue("lat")
+ //  log.info expected.getClass()
+     BigDecimal ex = new BigDecimal(expected)
+//   log.info ex.getClass()
+	assert ex == jsonsl.results[5].geometry.location.lat
+	log.info ex
+	log.info expected
+
+	assert "OK" == jsonsl.status
+  
+</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="query" value="restaurants in Sydney"/>
+  <con:entry key="key" value="AIzaSyCVJvsDOzhXv7k5ilMwz09JN1rEVys0Kog"/>
+</con:parameters><con:parameterOrder><con:entry>query</con:entry><con:entry>key</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties><con:property><con:name>placeid</con:name><con:value>a71f631fb3d71b90a80fdd04c3b14c50bb308b5b</con:value></con:property><con:property><con:name>lat</con:name><con:value>-33.89255</con:value></con:property></con:properties></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

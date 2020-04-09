@@ -9,5 +9,4 @@
   <con:entry key="input" value="Museum of Contemporary Art Australia"/>
   <con:entry key="inputtype" value="textquery"/>
   <con:entry key="fields" value="photos,formatted_address,name,rating,opening_hours,geometry"/>
-  <con:entry key="key" value="AIzaSyCVJvsDOzhXv7k5ilMwz09JN1rEVys0Kog"/>
 </con:parameters><con:parameterOrder><con:entry>input</con:entry><con:entry>inputtype</con:entry><con:entry>fields</con:entry><con:entry>key</con:entry></con:parameterOrder></con:request></con:method></con:resource></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
