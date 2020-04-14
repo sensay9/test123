@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Employee App</title>
+</head>
+<body>
+  <table>
+    <tr>
+      <td>
+        <!-- Html form for crud operations -->
+        <form autocomplete="off" onsubmit="event.preventDefault();onFormSubmit();">
+          <div>
+            <label>Full Name<span>*</span></label><label class="validation-error hide" id="fullNameValidationError">This Field is Required</label>
+            <input type="text" name="fullName" placeholder="Full Name" id="fullName">
+          </div>
+          <div>
+            <label>Employee ID</label>
+            <input type="text" name="empID" placeholder="Employee ID" id="empID">
+          </div>
+          <div>
+            <label>Salary</label><label class="validation-error hide" id="salaryValidationError">Only Numbers Allowed</label>
+            <input type="text" name="salary" placeholder="Salary" id="salary">
+          </div>
+          <div>
+            <label>City</label>
+            <input type="text" name="city" placeholder="City" id="city">
+          </div>
+
+          <div class="form-action-buttons">
+            <input type="submit" value="Submit">
+            <h5><span>*</span>  denotes manditory</h5>
+          </div>
+        </form>
+      </td>
+
+      <td>
+        <!-- Table to list all records -->
+        <table class="list" id="employeeList">
+          <thead>
+            <tr>
+              <th>Full Name</th>
+              <th>Employee ID</th>
+              <th>Salary</th>
+              <th>City</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Enter Employee Records Dynamically -->
+          </tbody>
+
+        </table>
+
+      </td>
+    </tr>
+  </table>
+
+
+<script type="text/javascript" src="./js/main.js">
+
+</script>
+</body>
+</html>

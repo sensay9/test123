@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>The PizzaShop | Store</title>
+</head>
+<body>
+  <header class="main-header">
+    <nav class="nav main-nav">
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="store.html">STORE</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+      </ul>
+    </nav>
+
+    <h1 class="store-name">The PizzaShop</h1>
+  </header>
+
+<section class="content-section container">
+  <h2 class="section-header">OUR MENU</h2>
+  <div class="shop-items">
+  <div class="shop-item">
+
+      <span class="shop-item-title">MAD MAC</span>
+
+    <img src="./img/p1.png" alt="" class="shop-item-img"width="450">
+    <div class="shop-item-details">
+      <span class="shop-item-price">
+        $13.99
+      </span>
+      <button class="btn shop-item shop-btn" type="button" name="button">Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="shop-item">
+
+      <span class="shop-item-title">BOURBON BBQ CHICKEN</span>
+
+    <img src="./img/p2.png" alt="" class="shop-item-img" width="450">
+    <div class="shop-item-details">
+      <span class="shop-item-price">
+        $15.99
+      </span>
+      <button class="btn shop-item shop-btn" type="button" name="button">Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="shop-item">
+
+      <span class="shop-item-title">ROYAL HAWAIIAN</span>
+
+    <img src="./img/p3.png" alt="" class="shop-item-img" width="450">
+    <div class="shop-item-details">
+      <span class="shop-item-price">
+        $11.99
+      </span>
+      <button  class="btn shop-item shop-btn" type="button" name="button">Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="shop-item">
+
+      <span class="shop-item-title">EL DORADO</span>
+
+    <img src="./img/p4.png" alt="" class="shop-item-img" width="450">
+    <div class="shop-item-details">
+      <span class="shop-item-price">
+        $18.99
+      </span>
+      <button class="btn shop-item shop-btn" type="button" name="button">Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="shop-item">
+
+      <span class="shop-item-title">SPICY PEROGY</span>
+
+    <img src="./img/p5.png" alt="" class="shop-item-img" width="450">
+    <div class="shop-item-details">
+      <span class="shop-item-price">
+        $9.99
+      </span>
+      <button class="btn shop-item shop-btn" type="button" name="button">Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="shop-item">
+
+      <span class="shop-item-title">TUSCAN</span>
+
+    <img src="./img/p6.png" alt="" class="shop-item-img" width="450">
+    <div class="shop-item-details">
+      <span class="shop-item-price">
+        $15.99
+      </span>
+      <button class="btn shop-item shop-btn" type="button" name="button">Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="shop-item">
+
+      <span class="shop-item-title">MEDITERRANEAN</span>
+
+    <img src="./img/p7.png" alt="" class="shop-item-img" width="450">
+    <div class="shop-item-details">
+      <span class="shop-item-price">
+        $16.99
+      </span>
+      <button class="btn shop-item shop-btn" type="button" name="button">Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="shop-item">
+
+      <span class="shop-item-title">TROPICAL CHICKEN</span>
+
+    <img src="./img/p8.png" alt="" class="shop-item-img" width="450">
+    <div class="shop-item-details">
+      <span class="shop-item-price">
+        $12.99
+      </span>
+      <button class="btn shop-item shop-btn" type="button" name="button">Add to Cart</button>
+    </div>
+  </div>
+</section>
+
+<section class="container content-section">
+  <h2 class="section-header">CART</h2>
+  <div class="cart-row">
+    <span class="cart-item cart-header cart-column">Item</span>
+
+    <span class="cart-price cart-header cart-column">Price</span>
+
+    <span class="cart-quantity cart-header cart-column">Quantity</span>
+  </div>
+</div>
+<div class="cart-items">
+  <!-- <div class="cart-row">
+    <div class="cart-item cart-column">
+      <img src="./img/p1.png" class="cart-item cart-img" alt="">
+      <span class="cart-item-title">MAD MAC</span>
+    </div>
+    <span class="cart-price cart-column">$11.99</span>
+    <div class="cart-quantity cart-column">
+      <input type="number" class="cart-quantity-input" name=""value="3" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="event.target.value = event.target.value.replace(/[^0-9]*/g,'');">
+      <button type="button"class="btn cart-btn" name="button">Remove</button>
+    </div>
+  </div>
+
+  <div class="cart-row">
+    <div class="cart-item cart-column">
+      <img src="./img/p8.png" class="cart-item cart-img" alt="">
+      <span class="cart-item-title">TROPICAL CHICKEN</span>
+    </div>
+    <span class="cart-price cart-column">$12.99</span>
+    <div class="cart-quantity cart-column">
+      <input type="number" class="cart-quantity-input" name="" value="1" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="event.target.value = event.target.value.replace(/[^0-9]*/g,'');">
+      <button type="button"class="btn cart-btn" name="button">Remove</button>
+    </div>
+  </div> -->
+</div>
+<div class="cart-total">
+  <span class="cart-total-title">Total</span>
+  <span class="cart-total-amount">$0.00</span>
+  <button type="button" name="button" class="btn purch-btn">PURCHASE</button>
+</div>
+</section>
+
+<footer class="main-footer">
+  <div class="container main-footer-container">
+    <h3 class="store-name">The PizzaShop</h3>
+    <ul class="nav footer-nav">
+      <li><a href="http://www.facebook.com" target="_blank"><img src="./img/social-fb.png" alt="facebook"></a></li>
+      <li><a href="http://www.instagram.com" target="_blank"><img src="./img/social-insta.png" alt="instagram"></a></li>
+      <li><a href="http://www.twitter.com" target="_blank"><img src="./img/social-twitter.png" alt="twitter"></a></li>
+    </ul>
+  </div>
+</footer>
+<script src="./js/main.js" async>
+
+</script>
+</body>
+</html>
